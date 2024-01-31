@@ -1,6 +1,7 @@
-//
-// Created by David on 30.01.2024.
-//
+/*
+ https://leetcode.com/problems/evaluate-reverse-polish-notation/?envType=daily-question&envId=2024-01-30
+ */
+
 class Solution {
 public:
     int evalRPN(vector<string>& tokens) {
@@ -13,10 +14,8 @@ public:
                 continue;
             }
 
-            intOne = numbers.top();
-            numbers.pop();
-            intTwo = numbers.top();
-            numbers.pop();
+            intOne = numbers.top(); numbers.pop();
+            intTwo = numbers.top(); numbers.pop();
 
             if (character[0] == '*') {
                 numbers.push(intTwo * intOne);
@@ -31,3 +30,5 @@ public:
         return numbers.top();
     }
 };
+
+
