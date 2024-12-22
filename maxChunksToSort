@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int maxChunksToSorted(vector<int>& arr) {
+        int maxInt = -1;
+        int maxSplitNumber = 0;
+        for(int idx = 0; idx < arr.size(); ++idx){
+            maxInt = max(arr[idx], maxInt);
+            if(maxInt == idx)
+                ++maxSplitNumber;
+        }
+        return maxSplitNumber > 0 ? maxSplitNumber : 1;
+    }
+};
