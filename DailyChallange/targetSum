@@ -1,0 +1,8 @@
+class Solution {
+public:
+    int findTargetSumWays(vector<int>& nums, int target, int position = 0, int sum = 0) {
+        if(position == nums.size() - 1)
+            return (sum + nums[position] == target) + (sum - nums[position] == target);
+        return findTargetSumWays(nums, target, position + 1, sum + nums[position]) + findTargetSumWays(nums, target, position + 1, sum - nums[position]);
+    }
+};
